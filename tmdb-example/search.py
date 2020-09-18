@@ -9,8 +9,7 @@ def search(query):
     searchHits = json.loads(httpResp.text)['hits']
     print("Num\tRelevance Score\t\tMovie Title\t\tOverview")
     for idx, hit in enumerate(searchHits['hits']):
-            print("%s\t%s\t\t%s" % (idx + 1, hit['_score'], hit['_source']['title']))
-
+            print(f'{idx + 1}\t{hit["_score"]}\t\t{hit["_source"]["title"]}')
 
 usersSearch = 'basketball with cartoon aliens'
 query = {
